@@ -1,0 +1,801 @@
+* { box-sizing: border-box; }
+
+header, nav, main, footer { display: block; } 
+
+html, body { 	
+	height: 100%; 
+	min-height: 100%; 
+	margin: 0; 
+}
+
+/*body{font-size: 94%;}*/
+
+body { 
+	background-color: white; 
+    color: #232323;
+    font-family: Helvetica, Tahoma, Trebuchet MS, Calibri, Verdana, Arial, sans-serif; 
+		/* puts footer at the bottom */
+	display: flex; 
+	flex-direction: column; 
+}
+
+header { 
+	background: #003660; 
+	/* background-image: linear-gradient(to bottom right, 
+	#DAF6F6, #001F94, #151B54 ); */
+	color: white; 
+	/* font-weight: bold; */
+	text-shadow:2px 2px 1px #003660;
+	/* border-bottom: 8px solid #cdcdcd; */
+	font-family: Trebuchet MS, Helvetica, Tahoma, Calibri, Verdana, Arial, sans-serif; 
+	position: absolute; 
+	top: 0; 
+	left: 0; 
+	width: 100%; 
+	height: 102px; 
+		/* playing with centering top and nav */
+	text-align: center; 
+}
+
+.banner {
+	margin-top: 28px;
+	font-size: 36px;
+}
+
+
+/*
+#banp2 {
+	font-size: 75%; 
+}
+
+*/
+
+
+
+main {
+	margin-left: 0px; margin-right: 0px;	
+	margin-top: 100px;
+}
+
+
+
+.navbar {
+  overflow: hidden;
+  background-color: #DAF6F6;
+  position: -webkit-sticky;  
+	position: sticky;
+	top: 0; 
+	z-index: 999; 
+}
+
+.navbar a {
+  float: left;
+  color: #003660;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.dropdownItems {
+	margin-left: auto; margin-right: auto;
+	max-width: 600px;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: inherit;
+  border: none;
+  outline: none;
+  color: #151B54;
+  padding: 6px 6px 7px 6px; 
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  font-weight: bold;
+  min-width: 150px; 
+}
+
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: #FFF8C6;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #DAE6E6;
+  min-width: 150px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: #232323;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #FFF8C6;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+
+
+
+#wrapper {
+	margin-left: auto; margin-right: auto; width: 75%; 
+	background-color: inherit;
+	/*background-image: none; 
+	min-width: 900px;
+	max-width: 1125px;
+	box-shadow: 5px 5px 5px #828282; */
+	padding: 0px 10px 10px 10px; 
+}
+
+
+
+
+
+
+/*
+p {
+	margin-left: 40px; 
+}
+*/
+
+
+
+ul { list-style: none; }
+ul li:before { content: "\22C4 \00A0 \00A0"; color: #0020C2; }
+li { padding: 2px 0px 2px 0px; } 
+
+
+	
+	
+
+footer { 
+	background-color: #DAF6F6;
+	font-size: .70em;
+	text-align: center; 
+	padding-bottom: 10px; padding-top: 10px; 
+/*	border-top: solid 1px #FEBC11; 
+
+	border-bottom: solid 2px #FEBC11; 
+*/
+	position: relative; 
+	bottom: 0; 
+	margin-top: auto; 
+	
+	width: 100%;
+}
+footer a {
+	color: #0000A0; 
+	text-decoration: none;
+	font-style: bold;
+}
+
+
+
+
+ 
+h4 {
+	display: block;
+	background: #E0FFFF;
+	color: #000;
+	font-weight: bold;
+	padding: 10px 10px 10px 20px;
+	margin-bottom: 0px; margin-top: 0px;
+}
+.talk {
+  border: 2px solid #E0FFFF;
+}
+.talk p{
+	margin: 10px 10px 10px 40px;
+}
+
+
+
+
+/* accordion */
+
+
+.tab {
+  position: relative;
+  margin: 2px;
+/*  max-width: 600px;*/
+}
+
+.tab input {
+  display: none;
+}
+.tab label {
+  display: block;
+/*  background: #FFF8C6;  */
+  color: #000000;
+  font-style: normal;
+  padding: 10px;
+  padding-left: 40px; 
+  cursor: pointer; 
+  color: #FEBC11; 
+}
+.tab label::after {
+  content: "\227D";
+  color: #FEBC11; 
+  top: 4px;
+  position: absolute;
+  display: block;  
+  left: 110px;
+  font-size: 140%;
+  transition: all 0.4s;
+}
+.tab input[type=checkbox]:checked + label::after {
+  transform: rotate(90deg);
+}
+.tab-content {
+  overflow: hidden;
+  background: #FFFFEB;
+  transition: max-height 0.4s; 
+  max-height: 0;
+}
+.tab-content p {
+  margin: 10px 10px 10px 40px;
+}
+
+
+.tab input:checked ~ .tab-content {
+  max-height: 800vh;
+}
+
+
+/* end of accordion */
+
+
+
+
+.homeheadshot {
+	float: right; 
+	margin-top: 12px;
+	padding: 10px 10px 10px 10px;
+}
+
+.homeheadshot img {
+	max-width: 350px;
+	max-height: 400px;
+	box-shadow: 4px 4px 4px #828282; 
+	border-radius: 4px;
+	padding: 3px 3px;
+	background-color: #003660;
+}
+
+
+
+.photos {
+	padding: 20px 10px 20px 10px;
+}
+
+.photos img {
+	/*max-height: 400px;*/
+	height: 300px; 
+	box-shadow: 4px 4px 4px #828282; 
+	border-radius: 4px;
+	padding: 3px 3px;
+	background-color: #003660;
+}
+
+
+
+table {
+	width: 90%; 
+	margin: auto; 
+	border-spacing: 0; 
+	/* border: 1px solid #DAF6F6; */
+	border: 1px solid #FEBC11; 
+	}
+	
+td, th {
+	padding: .7em; 
+	/* border: 1px solid #DAF6F6; */
+	border: 1px solid #FEBC11; 
+	}
+
+
+
+
+
+a:link { color: #0041C2; } 
+a:visited { color: #0041C2; } 
+a:hover { color: #FEBC11; } 
+
+
+
+	ul { list-style: none; }
+	ul li:before { content: "\22C4 \00A0 \00A0"; color: #FEBC11; }
+	li { padding: 1px 0px 0px 14px; } 
+/* \22C4 \22C6 \2666 */
+
+
+
+.uLine:before {
+	content: "\227D \00A0 \00A0 \00A0";
+	color: #FEBC11; 
+}
+.uLine:after {
+	content: "\00A0 \00A0 \00A0 \227C";
+	color: #FEBC11; 
+}
+
+
+.ghost {
+	display: none;
+}
+
+
+
+.researchsubs {
+	display: block;
+/*	background: #003660;*/
+	background-image: linear-gradient(#fff, #fff, #efefef);
+	color: #7F38EC;
+	font-weight: bold;
+	padding: 10px;
+	text-align: center;
+	font-size: 19px; 
+}
+
+.papersections {
+	color: #0000A0;
+	font-family: Trebuchet MS, Helvetica, Tahoma, Calibri, Verdana, Arial, sans-serif; 
+	
+/*	text-shadow: 1px 1px #7F38EC; 
+background-image: linear-gradient(#fff, #fff, #efefef);*/
+	font-size: 20px;
+	padding: 0px 0 10px 0px;
+	margin: 0px 0px 0px 0px;
+	text-align: center;
+}
+
+
+
+
+
+
+/* slider start  
+
+
+SIDE ARROWS ARE OFF IN WIDER SCREENS 
+
+*/ 
+
+
+#i1, #i2, #i3, #i4, #i5{ display: none;}
+
+.container{
+		margin: 0 auto;
+		margin-top: 20px;
+		position: relative;
+		width: 80%;
+		padding: 10px 0px 10px 0px;
+		height: 400px;
+		user-select: none;
+		background-color: #13232e;
+		/*
+		background-color: #1c1c1c;
+		#0c181f   #101e27
+		padding-bottom: 38%;
+		border: solid 10px #616161;
+		border-radius:10px ; 
+		border: solid 5px #003660;
+		border-radius:5px ; 
+		
+		border: solid 3px #13232e;
+		border-radius:2px ; 
+		box-shadow: 4px 4px 4px #828282;
+		*/
+		
+		box-shadow: 6px 6px 6px #828282;
+	}
+
+	.container .slide_img{
+		position: absolute;
+		height: 350px;
+		
+		margin-left: auto;
+		margin-right: auto;
+		left: 0;
+		right: 0;
+		text-align: center;
+		
+		/*
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+		*/
+		/*
+		width: 100%;
+		height: 100%;
+		*/
+	}
+	.container .slide_img img{
+		width: inherit;
+		height: inherit;
+	}
+
+	 .prev, .next{
+		width: 8%;
+		height: 400px;
+		position: absolute;
+		top: -10px; 
+		
+		background-color: rgba(68, 90, 166,.25);
+		
+		color:rgba(244, 244, 244,.9);
+		z-index: 99;
+		transition: .2s;
+		cursor: pointer;
+		text-align: center;
+	}
+
+	.next{
+		right:0;
+	}
+	.prev{
+		left:0;
+	}
+
+	label span{
+		position: absolute;
+		font-size: 100pt;
+		top: 50%;
+	 	transform: translateY(-50%);
+	}
+
+	.prev:hover, .next:hover{
+		transition: .2s;
+		background-color: rgba(255, 255, 255, 0.9);
+		/* changed to match dots 
+		background-color: rgba(88, 88, 89,.8);
+		*/
+		color: #ffffff; 
+	}
+	
+	.next:hover{
+		background-image: linear-gradient(to right, #13232e, rgba(88, 88, 88,.2));
+	}
+	.prev:hover{
+		background-image: linear-gradient(to left, #13232e, rgba(88, 88, 88,.2));
+	}
+
+.container #nav_slide{
+	width: 100%;
+	bottom: 12%;
+	height: 11px;
+	position: absolute;
+	text-align: center;
+	z-index: 99;
+	cursor: default;
+}
+
+#nav_slide .dots{
+	top: 36px;
+	width: 18px;
+	height: 18px;
+	margin: 0 4px;
+	position: relative;
+	border-radius: 100%;
+	display: inline-block;
+	background-color: rgba(68, 90, 166,.25);
+	transition: .2s;
+}
+
+#nav_slide .dots:hover {
+	cursor: pointer;
+	background-color: rgba(255, 255, 255, 0.9);
+	transition: .2s
+}
+
+.slide_img{z-index: -1;}
+
+	#i1:checked ~ #one  ,
+	#i2:checked ~ #two  ,
+	#i3:checked ~ #three,
+	#i4:checked ~ #four ,
+	#i5:checked ~ #five 
+	{z-index: 9; animation: scroll .3s ease-in-out;}
+
+	#i1:checked  ~  #nav_slide #dot1,
+	#i2:checked  ~  #nav_slide #dot2,
+	#i3:checked  ~  #nav_slide #dot3,
+	#i4:checked  ~  #nav_slide #dot4,
+	#i5:checked  ~  #nav_slide #dot5
+	{ background-color: rgba(255,255,255,.9);}
+
+@keyframes scroll{
+	0%{	opacity:.4;}
+	100%{opacity:1;}
+}		
+
+/* .yt{
+	margin: 0 auto;
+	margin-top: 50px;
+	position: relative;
+	width: 150px;
+	height:50px;
+	border: outset #2c2c2c 4px;
+	border-radius: 10px;
+	text-align: center;
+	font-size: 30pt;
+	transition: .4s;
+}
+
+.yt a{
+	text-decoration: none;
+	color: #4c4c4c;
+	transition: .4s;
+}
+
+.yt:hover{
+	background: #4c4c4c;
+	transition: .3s;
+}
+
+.yt:hover a{
+	color: #fff;
+	transition: .3s;
+}
+ */
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* this was 1024 - make wrapper max width 90% of this */
+@media only screen and (max-width: 1250px) {
+
+	header {
+		text-align: center;
+	}
+	
+	/*body {
+		background-color: #F0F8FF;
+	}*/
+	
+	/* added for bar menu */
+	main {
+		margin-left: 0px; margin-right: 0px;	
+		margin-top: 100px;
+	}
+	
+	#wrapper { 
+		margin-left: auto; margin-right: auto; width: 80%; 
+	}
+	
+	
+	.hpgaddress {
+		margin-left: 30px;
+	
+	}
+	
+	
+	
+	.container{
+		border: none;
+		width: 85%;
+		
+		/*
+		height: 0;
+		padding-bottom: 55%; 
+		*/
+	}	
+	
+	
+}
+
+
+
+
+
+
+
+/* this was 768 - consider min width for wrapper */
+@media only screen and (max-width: 900px) {
+	
+	/*body {
+		background-color: white;
+	}*/
+
+	header {
+		text-align: center;
+		/* border-bottom: none; */
+	}
+	
+	main {
+		margin-left: 0px; margin-right: 0px;	
+		margin-top: 100px;
+		
+		/* testing background-color: red; */
+	}
+	
+	#wrapper { 
+		margin-left: auto; margin-right: auto; width: 85%; 
+	}
+
+
+/* maybe vary it with whether have odd or even number of menu items*/	
+/* handling at narrower width 
+	.dropdownItems {
+		margin-left: auto; margin-right: auto;
+		max-width: 300px;
+}
+*/
+
+
+/*	
+	#menu {
+		background-color: #dedede;
+		width: 100%;
+		margin-left: 0px; margin-right: 0px;	
+		padding-top: 1px; padding-bottom: 1px;
+	}
+	nav li {
+		display: inline-block; 
+}
+*/
+
+	
+	
+	.homeheadshot {
+		padding: 10px 10px 10px 10px;
+	}
+	
+	.homeheadshot img {
+		float: right;
+		max-width: 250px;
+		max-height: 300px;
+	}
+	
+	
+	
+	
+	.container{
+
+		width: 95%;
+		
+		/*
+		height: 0;
+		padding-bottom: 55%; 
+		*/
+	}	
+	
+	label span { font-size: 50pt; }
+	
+	.prev, .next{
+		width: 8%;
+	}	
+	#nav_slide .dots{
+		width: 12px;
+		height: 12px;
+	}
+	
+	
+	
+	
+	
+	}
+
+
+/* just for nav - consider width and odd or even nav elements - add extra width, check wrapping */
+@media only screen and (max-width: 650px) {
+	
+	.dropdownItems {
+		margin-left: auto; margin-right: auto;
+		/* maybe vary it with whether have odd or even number of menu items*/
+		max-width: 300px;
+	}
+
+	.homeheadshot {
+		padding: 5px 5px 5px 5px;
+	}
+	
+	.homeheadshot img {
+		float: right;
+		max-width: 180px;
+		max-height: 230px;
+	}
+
+	#wrapper { 
+	margin-left: auto; margin-right: auto; width: 96%; 
+	padding: 0 4px 0 4px;
+	}
+	
+	.dropdown .dropbtn {
+	padding: 2px 3px 4px 3px; 
+	}
+	
+	header { height: 82px; z-index: -999;}
+	.banner { margin-top: 12px; }
+	main { margin-top: 80px; }
+	
+	.topicsResearchBar {
+		display: none;
+	}
+	
+	#bottombtn {
+		margin-right: 40px;
+		text-align: right;
+		display: block;
+	}
+
+	.tab {
+		margin-left: 5px;
+	}
+	.tab label {
+		padding: 10px 10px 5px 55px;
+	}
+	.tab-content p {
+		padding: 0px 10px 10px 0px;
+	}
+	
+	
+	
+	.container{
+		border: none;
+		width: 100%;
+		
+		/*
+		height: 0;
+		padding-bottom: 55%; 
+		*/
+	}	
+	
+	label span { font-size: 50pt; }
+	
+	.prev, .next{
+		width: 8%;
+	}	
+	#nav_slide .dots{
+		width: 12px;
+		height: 12px;
+	}
+	
+	}
+	
+
+
+
+
+@media screen  and(min-width: 970px){
+	.me{ display: none;}
+}
+
+
+
+
+
+
